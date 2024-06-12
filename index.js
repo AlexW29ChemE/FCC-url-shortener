@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGO_URI,{useNewUrlParser:true,useUnifiedTopology:
   console.log('Unable to connect to Mongo, Make sure its running: ',process.env.MONGO_URI)
 })
 
-const urlRecordSchema = mongoose.Schema({
+const urlRecordSchema = new mongoose.Schema({
   url:String, shortUrl:Number
 })
 const URLRecord = mongoose.model('urlRecord',urlRecordSchema);
